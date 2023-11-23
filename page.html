@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Escribo</title>
+</head>
+<body>
+    <script>
+        function divisiblesSum(number) {
+            let sum = 0;
+            for (let i = 1; i < number; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        function calculateSum() {
+            const inputNumber = document.getElementById('number');
+            const resultDiv = document.getElementById('result');
+
+            const number = parseInt(inputNumber.value);
+            const result = divisiblesSum(number);
+
+            resultDiv.textContent = `O somatório dos números divisíveis por 3 ou 5 menores que ${number} é: ${result}`;
+        }
+    </script>
+
+    <h1>Somatório Divisíveis por 3 ou 5</h1>
+    <label for="number">Digite um número inteiro positivo:</label>
+    <input type="number" id="number" required>
+    <button onclick="calculateSum()">Calcular</button>
+    <p id="result"></p>
+</body>
+</html>
